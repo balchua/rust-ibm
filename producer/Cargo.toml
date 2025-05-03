@@ -1,0 +1,27 @@
+[package]
+name = "producer"
+version = "0.1.0"
+edition = "2024"
+readme = "../README.md"
+description = "MQI Producer"
+license = "Apache-2.0"
+repository = "git@github.com:balchua/rust-ibm.git"
+keywords = ["messaging", "ibm", "mq", "mqm", "mqi", "rust"]
+categories = ["messaging"]
+
+[dependencies]
+chrono = "0.4.41"
+ctrlc = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+mqi = { workspace = true, features = ["link"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "producer"
+path = "src/main.rs"

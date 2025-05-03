@@ -1,0 +1,30 @@
+
+[workspace.dependencies]
+mqi = { git = "https://github.com/advantic-au/mqi", branch = "develop" }
+libmqm-sys = { version = "0.8.0", default-features = false, git = "https://github.com/advantic-au/libmqm-sys", branch = "develop" }
+ctrlc = { version = "3.4.6" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = { version = "1.0.98" }
+chrono = "0.4.41"
+
+[workspace]
+resolver = "2"
+members = ["producer", "consumer"]
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+# deny
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+cargo = { level = "deny", priority = -1 }
+self_named_module_files = "deny"
+# warn
+dbg_macro = "warn"
+# allow
+module_name_repetitions = "allow"
+multiple_crate_versions = "allow"

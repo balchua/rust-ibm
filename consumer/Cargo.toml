@@ -1,0 +1,28 @@
+[package]
+name = "consumer"
+version = "0.1.0"
+edition = "2024"
+readme = "../README.md"
+description = "MQI Consumer"
+license = "Apache-2.0"
+repository = "git@github.com:balchua/rust-ibm.git"
+keywords = ["messaging", "ibm", "mq", "mqm", "mqi", "rust"]
+categories = ["messaging"]
+
+[dependencies]
+tracing = { workspace = true }
+chrono = { workspace = true }
+libmqm-sys = { workspace = true }
+ctrlc = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+mqi = { workspace = true, features = ["link"] }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "consumer"
+path = "src/main.rs"
