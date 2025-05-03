@@ -14,6 +14,12 @@ Make sure to set the `MQ_HOME` environment variable to the directory where you e
 ```bash
 export MQ_HOME=/opt/mqm
 ```
+Also make sure that you have the `LD_LIBRARY_PATH` environment variable set to the `lib64` directory of the redistributable client. For example:
+
+```bash
+export LD_LIBRARY_PATH=$MQ_HOME/lib64:$LD_LIBRARY_PATH
+```
+
 
 Install `cargo-workspace-lints`
 
